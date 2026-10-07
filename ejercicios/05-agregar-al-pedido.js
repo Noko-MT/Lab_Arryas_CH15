@@ -19,9 +19,29 @@
 // Pista: valida ANTES de hacer push.
 // ============================================================
 
+//const carta = ["Bandeja paisa", "Limonada de coco", "Jugo de lulo", "Postre de natas"];
+
+// const carta = [
+//   { nombre: "Bandeja paisa", precio: 32000, categoria: "fuerte", disponible: true },
+//   { nombre: "Limonada de coco", precio: 9000, categoria: "bebida", disponible: true },
+//   { nombre: "Jugo de lulo", precio: 7000, categoria: "bebida", disponible: true },
+//   { nombre: "Postre de natas", precio: 11000, categoria: "postre", disponible: true },
+// ];
+
 function agregarAlPedido(pedido, carta, numero) {
   // Tu código aquí
+  if (carta[numero] !== undefined) {
+    pedido.push(carta[numero]);
+    return `Agregado: ${carta[numero].nombre}`;
+  }
+  return "Ese número no está en la carta";
 }
+
+// console.log(agregarAlPedido([], carta, 2));// "Agregado: Jugo de lulo" 
+// console.log(agregarAlPedido([], carta, 9));// "Ese número no está en la carta"
+// const ped = [];
+// console.log(agregarAlPedido(ped, carta, 2));
+// console.log(ped);
 
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { agregarAlPedido };

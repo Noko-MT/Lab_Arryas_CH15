@@ -17,9 +17,26 @@
 // Pista: arreglo vacío → for → push de un texto → return al final.
 // ============================================================
 
+// const menu = [
+//   { nombre: "Bandeja paisa", precio: 32000, categoria: "fuerte", disponible: true },
+//   { nombre: "Ajiaco", precio: 28000, categoria: "fuerte", disponible: false },
+//   { nombre: "Limonada de coco", precio: 9000, categoria: "bebida", disponible: true },
+//   { nombre: "Jugo de lulo", precio: 7000, categoria: "bebida", disponible: true },
+//   { nombre: "Postre de natas", precio: 11000, categoria: "postre", disponible: true },
+// ];
+
 function cartaNumerada(menu) {
   // Tu código aquí
+  const submenu = [];
+  for (let i = 0; i < menu.length; i++) {
+    submenu.push(`${i}. ${menu[i].nombre} · $${menu[i].precio}`); //"0. Bandeja paisa · $32000"
+  }
+  return submenu;
 }
+
+//console.log(cartaNumerada(menu)[1]); // "0. Bandeja paisa · $32000"
+//console.log(cartaNumerada(menu)[2]); // "1. Ajiaco · $28000"
+//console.log(cartaNumerada([])); // []
 
 // No borres esta línea: es la puerta por donde el test usa tu función
 module.exports = { cartaNumerada };
